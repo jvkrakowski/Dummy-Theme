@@ -580,7 +580,7 @@ input.wp-block-search__input {
   position: absolute; }
 
 .wp-block-search .wp-block-search_button {
-  background-color: #ED1C24 !important; }
+  background: #ED1C24 !important; }
 
 /* Links
 --------------------------------------------- */
