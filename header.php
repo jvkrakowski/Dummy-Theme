@@ -37,11 +37,26 @@
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 					<?php
 				endif;
-				$dummy_theme_description = get_bloginfo( 'description', 'display' );
-				if ( $dummy_theme_description || is_customize_preview() ) :
+
+				$options =  get_option('checkbox');
+				
+				$subtitle = get_bloginfo( 'description', 'display' ); 
+				$dummy_theme_description = '<p class="site-description">' . $subtitle . '</p>';
+
+				//Check if checkbox is checked    
+				if (  isset( $options ) ) :
 					?>
-					<p class="site-description"><?php echo $dummy_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-				<?php endif; ?>
+						
+					<?php 
+				else :
+					?>
+						  <?php $dummy_theme_description; ?>
+						
+					<?php endif; ?>
+
+				
+				
+
 			</div>
 		</div>
 

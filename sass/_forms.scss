@@ -79,3 +79,17 @@ select {
 textarea {
 	width: 100%;
 }
+
+input.wp-block-search__input {
+	background: rgba(45, 130, 183, 0.5) !important;
+	border: 1px solid #2D82B7 !important;
+}
+
+.wp-block-search__label {
+	display: none;
+	position: absolute;
+}
+
+.wp-block-search .wp-block-search_button {
+	background-color: #ED1C24 !important;
+}

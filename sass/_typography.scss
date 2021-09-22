@@ -3,6 +3,11 @@ $font-large: 24px;
 $font-regular: 16px;
 $font-small: 12px; 
 
+
+/* font imports */ 
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Staatliches&display=swap');
+
 /* Typography
 --------------------------------------------- */
 body,
@@ -12,7 +17,7 @@ select,
 optgroup,
 textarea {
 	color: $color;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -24,6 +29,7 @@ h4,
 h5,
 h6 {
 	clear: both;
+	font-family: 'Staatliches', cursive;
 }
 
 p {

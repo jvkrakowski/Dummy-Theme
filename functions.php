@@ -187,104 +187,51 @@ $pages = array(
 		'page_title'	=> __( 'Dummy Option Page', 'dummy-theme' ),
 		'sections'		=> array(
 			'section-one'	=> array(
-				'title'			=> __( 'Standard Inputs', 'dummy-theme' ),
+				'title'			=> __( 'Contact', 'dummy-theme' ),
 				'fields'		=> array(
-					'default'		=> array(
-						'title'			=> __( 'Default (text)', 'dummy-theme' ),
+					'address'		=> array(
+						'title'			=> __( 'Address', 'dummy-theme' ),
 						'text'			=> __( 'Text attributes are used as help text for most input types.' ),
-					),
-					'date'			=> array(
-						'title'			=> __( 'Date', 'dummy-theme' ),
-						'type'			=> 'date',
-						'value'			=> 'now',
-					),
-					'datetime'		=> array(
-						'title'			=> __( 'Datetime-Local', 'dummy-theme' ),
-						'type'			=> 'datetime-local',
-						'value'			=> 'now',
-					),
-					'datetime-local' => array(
-						'title'			=> __( 'Datetime-Local', 'dummy-theme' ),
-						'type'			=> 'datetime-local',
-						'value'			=> 'now',
 					),
 					'email'			=> array(
 						'title'			=> __( 'Email', 'dummy-theme' ),
 						'type'			=> 'email',
 						'placeholder'	=> 'email.address@domain.com',
 					),
-					'month'			=> array(
-						'title'			=> __( 'Month', 'dummy-theme' ),
-						'type'			=> 'month',
-						'value'			=> 'now',
-					),
-					'number'		=> array(
-						'title'			=> __( 'Number', 'dummy-theme' ),
-						'type'			=> 'number',
-						'value'			=> 42,
-					),
-					'password'		=> array(
-						'title'			=> __( 'Password', 'dummy-theme' ),
-						'type'			=> 'password',
-					),
-					'search'		=> array(
-						'title'			=> __( 'Search', 'dummy-theme' ),
-						'type'			=> 'search',
-						'placeholder'	=> __( 'Keywords or terms&hellip;', 'dummy-theme' ),
-					),
 					'tel'			=> array(
 						'title'			=> __( 'Telephone', 'dummy-theme' ),
 						'type'			=> 'tel',
 						'placeholder'	=> '(555) 555-5555',
 					),
-					'time'			=> array(
-						'title'			=> __( 'Time', 'dummy-theme' ),
-						'type'			=> 'time',
-						'value'			=> 'now',
-					),
-					'url'			=> array(
-						'title'			=> __( 'URL', 'dummy-theme' ),
+					'facebook'			=> array(
+						'title'			=> __( 'Facebook', 'dummy-theme' ),
 						'type'			=> 'url',
 						'placeholder'	=> 'http://jeremyhixon.com',
 					),
-					'week'			=> array(
-						'title'			=> __( 'Week', 'dummy-theme' ),
-						'type'			=> 'week',
-						'value'			=> 'now',
+					'twitter'			=> array(
+						'title'			=> __( 'Twitter', 'dummy-theme' ),
+						'type'			=> 'url',
+						'placeholder'	=> 'http://jeremyhixon.com',
 					),
 				),
 			),
 			'section-two'	=> array(
-				'title'			=> __( 'Non-standard Input', 'dummy-theme' ),
+				'title'			=> __( 'Display', 'dummy-theme' ),
 				'fields'		=> array(
-					'checkbox'		=> array(
-						'title'			=> __( 'Checkbox', 'dummy-theme' ),
+					'subtitle'		=> array(
+						'title'			=> __( 'Subtitle', 'dummy-theme' ),
 						'type'			=> 'checkbox',
-						'text'			=> __( 'Text attributes are used as labels for checkboxes' ),
+						'text'			=> __( 'Check to hide subtitle.' ),
 					),
 					'color'			=> array(
 						'title'			=> __( 'Color', 'dummy-theme' ),
 						'type'			=> 'color',
 						'value'			=> '#cc0000',
 					),
-					'media'			=> array(
-						'title'			=> __( 'Media', 'dummy-theme' ),
+					'logo'			=> array(
+						'title'			=> __( 'logo', 'dummy-theme' ),
 						'type'			=> 'media',
 						'value'			=> 'http://your-domain.com/wp-content/uploads/2016/01/sample.jpg',
-					),
-					'radio'			=> array(
-						'title'			=> __( 'Radio', 'dummy-theme' ),
-						'type'			=> 'radio',
-						'value'			=> 'option-two',
-						'choices'		=> array(
-							'option-one'	=> __( 'Option One', 'dummy-theme' ),
-							'option-two'	=> __( 'Option Two', 'dummy-theme' ),
-						),
-					),
-					'range'			=> array(
-						'title'			=> __( 'Range', 'dummy-theme' ),
-						'type'			=> 'range',
-						'value'			=> 75,
 					),
 					'select'		=> array(
 						'title'			=> __( 'Select', 'dummy-theme' ),
@@ -346,28 +293,3 @@ function dummy_dashboard_widget_render() {
     // Display whatever you want to show.
     esc_html_e( "A custom dashboard widget is a great way to convey tidbits of information. I like using them to list my contact information for clients to keep on hand. Check out my website: www.jvkrakowski.com", "dummy" );
 }
-
-// add pending review post status 
-
-if ( ! function_exists('pending_review_status') ) {
-
-	// Register Custom Status
-	function pending_review_status() {
-	
-		$args = array(
-			'label'                     => _x( 'Pending', 'Status General Name', 'dummy-theme' ),
-			'label_count'               => _n_noop( 'Pending (%s)',  'Pending (%s)', 'dummy-theme' ), 
-			'public'                    => false,
-			'show_in_admin_all_list'    => true,
-			'show_in_admin_status_list' => true,
-			'exclude_from_search'       => true,
-		);
-		register_post_status( 'pending', $args );
-	
-	}
-	add_action( 'init', 'pending_review_status', 0 );
-	
-
-	
-	
-	}
