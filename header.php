@@ -22,8 +22,7 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div class="wrapper">
-	<div class="row">
+	<div class="row" id="site-header">
 		<div id="site-branding" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 			<div class="box">
 				<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'dummy-theme' ); ?></a>
@@ -64,3 +63,5 @@
 
 			
 	</div>
+	
+	<div class="wrapper">

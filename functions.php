@@ -346,3 +346,28 @@ function dummy_dashboard_widget_render() {
     // Display whatever you want to show.
     esc_html_e( "A custom dashboard widget is a great way to convey tidbits of information. I like using them to list my contact information for clients to keep on hand. Check out my website: www.jvkrakowski.com", "dummy" );
 }
+
+// add pending review post status 
+
+if ( ! function_exists('pending_review_status') ) {
+
+	// Register Custom Status
+	function pending_review_status() {
+	
+		$args = array(
+			'label'                     => _x( 'Pending', 'Status General Name', 'dummy-theme' ),
+			'label_count'               => _n_noop( 'Pending (%s)',  'Pending (%s)', 'dummy-theme' ), 
+			'public'                    => false,
+			'show_in_admin_all_list'    => true,
+			'show_in_admin_status_list' => true,
+			'exclude_from_search'       => true,
+		);
+		register_post_status( 'pending', $args );
+	
+	}
+	add_action( 'init', 'pending_review_status', 0 );
+	
+
+	
+	
+	}

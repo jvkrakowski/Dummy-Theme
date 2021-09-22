@@ -322,8 +322,15 @@ h1.site-title {
   h1.site-title a {
     text-decoration: none; }
 
+#site-header {
+  background: #07004D; }
+
 p.site-description {
   margin: 0; }
+
+/* footer */
+.site-footer {
+  background: #07004D; }
 
 /* Posts and pages
 --------------------------------------------- */
